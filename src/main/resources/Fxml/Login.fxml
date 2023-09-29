@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.banksystem.Controllers.LoginController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.banksystem.Controllers.LoginController">
+   <stylesheets>
+      <URL value="@../Styles/login.css"/>
+      <URL value="@../Styles/login.css"/>
+   </stylesheets>
+   <VBox layoutX="-6.0" layoutY="-5.0" prefHeight="400.0" prefWidth="200.0" styleClass="login_logo_container"
+         AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <FontAwesomeIconView glyphName="BANK" size="40.0" strokeType="OUTSIDE" strokeWidth="0.0"/>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="AlobrochukBank"/>
+   </VBox>
+   <VBox layoutX="217.0" layoutY="100.0" prefHeight="350.0" prefWidth="350.0" styleClass="login_form_container"
+         AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <Label id="choice-prompt-text" text="Выберите тип аккаунта:"/>
+      <ChoiceBox fx:id="acc_selector" prefWidth="150.0" styleClass="account_selector"/>
+      <Label fx:id="login_lbl" text="Имя пользователя:"/>
+      <TextField fx:id="login_fld" styleClass="input_field"/>
+      <Label fx:id="password_lbl" styleClass="login_form_container" text="Пароль:"/>
+      <TextField fx:id="password_fld" styleClass="input_field"/>
+      <Button fx:id="login_btn" mnemonicParsing="false" text="Button"/>
+      <Label fx:id="error_lbl" styleClass="error_lbl" text="Ошибка:"/>
+   </VBox>
 </AnchorPane>
