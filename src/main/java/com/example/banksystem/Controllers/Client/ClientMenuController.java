@@ -18,5 +18,19 @@ public class ClientMenuController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        addListeners();
+    }
+
+    private void addListeners(){
+        dashboard_btn.setOnAction(event -> onDashboard());
+        transactions_btn.setOnAction(event -> onTransaction());
+    }
+
+    private void onDashboard() {
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Dashboard");
+    }
+
+    private void onTransaction() {
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Transactions");
     }
 }
