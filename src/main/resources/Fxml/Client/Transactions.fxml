@@ -4,13 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="transactions_container"
-            stylesheets="@../../Styles/Transactions.css" xmlns="http://javafx.com/javafx/20.0.1"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.banksystem.Controllers.Client.TransactionsController">
-   <Text layoutX="352.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Переводы"
-         AnchorPane.leftAnchor="352.0" AnchorPane.topAnchor="14.0"/>
-   <ListView fx:id="transaction_listview" layoutX="12.0" layoutY="66.0" prefHeight="640.0" prefWidth="830.0"
-             AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="100.0"/>
+<AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="transactions_container" stylesheets="@../../Styles/Transactions.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.banksystem.Controllers.Client.TransactionsController">
+   <Text layoutX="352.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Переводы" AnchorPane.leftAnchor="352.0" AnchorPane.topAnchor="14.0" />
+   <ListView fx:id="transaction_listview" layoutX="12.0" layoutY="66.0" prefHeight="640.0" prefWidth="830.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="100.0" />
 </AnchorPane>
