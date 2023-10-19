@@ -22,6 +22,7 @@ public class WorkerMenuController implements Initializable {
     private void addListeners() {
         create_client_btn.setOnAction(event -> onCreateClient());
         clients_btn.setOnAction(event -> onClients());
+        deposit_btn.setOnAction(Event -> onDeposit());
     }
 
     private void onCreateClient() {
@@ -30,5 +31,9 @@ public class WorkerMenuController implements Initializable {
 
     private void onClients() {
         Model.getInstance().getViewFactory().getWorkerSelectedMenuItem().set(WorkerMenuOptions.CLIENTS);
+    }
+
+    private void onDeposit() {
+        Model.getInstance().getViewFactory().getWorkerSelectedMenuItem().set(WorkerMenuOptions.DEPOSIT);
     }
 }

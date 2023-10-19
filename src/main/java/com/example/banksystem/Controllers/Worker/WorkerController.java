@@ -15,6 +15,7 @@ public class WorkerController implements Initializable {
         Model.getInstance().getViewFactory().getWorkerSelectedMenuItem().addListener((observableValue, s, newVal) -> {
             switch (newVal) {
                 case CLIENTS -> worker_parent.setCenter(Model.getInstance().getViewFactory().getClientsView());
+                case DEPOSIT -> worker_parent.setCenter(Model.getInstance().getViewFactory().getDepositView());
                 default -> worker_parent.setCenter(Model.getInstance().getViewFactory().getCreateClientView());
             }
             });

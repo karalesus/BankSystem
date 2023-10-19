@@ -24,6 +24,7 @@ public class ViewFactory {
     private AnchorPane createClientView;
     private final ObjectProperty<WorkerMenuOptions> workerSelectedMenuItem;
     private AnchorPane clientsView;
+    private AnchorPane depositView;
 
     public ViewFactory() {
         this.loginAccountType = AccountType.CLIENT;
@@ -113,6 +114,18 @@ public class ViewFactory {
             }
         }
         return clientsView;
+    }
+
+    public AnchorPane getDepositView() {
+        if (depositView == null) {
+            try {
+                depositView = new FXMLLoader(getClass().getResource("/FXML/Worker/Deposit.fxml")).load();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return depositView;
     }
 
     public void showWorkerWindow() {
