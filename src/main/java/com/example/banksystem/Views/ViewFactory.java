@@ -102,7 +102,7 @@ public class ViewFactory {
     }
 
     public void showWorkerWindow() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Worker.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Worker/Worker.fxml"));
         WorkerController controller = new WorkerController();
         loader.setController(controller);
         createStage(loader);
