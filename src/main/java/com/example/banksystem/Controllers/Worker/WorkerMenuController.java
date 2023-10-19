@@ -20,10 +20,15 @@ public class WorkerMenuController implements Initializable {
     }
 
     private void addListeners() {
-
+        create_client_btn.setOnAction(event -> onCreateClient());
+        clients_btn.setOnAction(event -> onClients());
     }
 
     private void onCreateClient() {
         Model.getInstance().getViewFactory().getWorkerSelectedMenuItem().set(WorkerMenuOptions.CREATE_CLIENT);
+    }
+
+    private void onClients() {
+        Model.getInstance().getViewFactory().getWorkerSelectedMenuItem().set(WorkerMenuOptions.CLIENTS);
     }
 }

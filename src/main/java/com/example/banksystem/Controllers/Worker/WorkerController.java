@@ -13,7 +13,10 @@ public class WorkerController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Model.getInstance().getViewFactory().getWorkerSelectedMenuItem().addListener((observableValue, s, newVal) -> {
-            // add switch statement
+            switch (newVal) {
+                case CLIENTS -> worker_parent.setCenter(Model.getInstance().getViewFactory().getClientsView());
+                default -> worker_parent.setCenter(Model.getInstance().getViewFactory().getCreateClientView());
+            }
             });
         }
     }

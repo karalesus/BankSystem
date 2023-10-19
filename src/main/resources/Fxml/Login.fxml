@@ -20,7 +20,7 @@
    <VBox layoutX="217.0" layoutY="100.0" prefHeight="350.0" prefWidth="350.0" styleClass="login_form_container"
          AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
       <Label id="choice-prompt-text" text="Выберите тип аккаунта:"/>
-      <ChoiceBox fx:id="acc_selector" prefWidth="150.0" styleClass="account_selector"/>
+      <ChoiceBox fx:id="acc_selector" prefWidth="100.0" styleClass="account_selector"/>
       <Label fx:id="login_lbl" text="Имя пользователя:"/>
       <TextField fx:id="login_fld" styleClass="input_field"/>
       <Label fx:id="password_lbl" styleClass="login_form_container" text="Пароль:"/>

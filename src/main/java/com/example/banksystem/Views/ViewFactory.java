@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 
 public class ViewFactory {
     private AccountType loginAccountType;
@@ -18,9 +20,10 @@ public class ViewFactory {
     private AnchorPane transactionView;
     private AnchorPane accountsView;
 
-    // Admin Views
+    // Worker Views
     private AnchorPane createClientView;
     private final ObjectProperty<WorkerMenuOptions> workerSelectedMenuItem;
+    private AnchorPane clientsView;
 
     public ViewFactory() {
         this.loginAccountType = AccountType.CLIENT;
@@ -99,6 +102,17 @@ public class ViewFactory {
             }
         }
         return createClientView;
+    }
+
+    public AnchorPane getClientsView() {
+        if (clientsView == null) {
+            try {
+                clientsView = new FXMLLoader(getClass().getResource("/Fxml/Worker/Clients.fxml")).load();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return clientsView;
     }
 
     public void showWorkerWindow() {
