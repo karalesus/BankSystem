@@ -1,6 +1,8 @@
 package com.example.banksystem.Controllers;
 
 import com.example.banksystem.Models.Model;
+import com.example.banksystem.Views.AccountType;
+import javafx.collections.FXCollections;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -12,7 +14,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
-    public ChoiceBox acc_selector;
+    public ChoiceBox<AccountType> acc_selector;
     public Label login_lbl;
     public TextField login_fld;
     public Label password_lbl;
@@ -22,6 +24,8 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        acc_selector.setItems(FXCollections.observableArrayList(AccountType.CLIENT, AccountType.WORKER));
+        acc_selector.setValue(Model.getInstance().getViewFactory().getLoginAccountType());
         login_btn.setOnAction(event -> onLogin());
     }
 

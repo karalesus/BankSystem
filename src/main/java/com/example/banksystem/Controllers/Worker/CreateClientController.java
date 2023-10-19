@@ -1,4 +1,4 @@
-package com.example.banksystem.Controllers.Admin;
+package com.example.banksystem.Controllers.Worker;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;

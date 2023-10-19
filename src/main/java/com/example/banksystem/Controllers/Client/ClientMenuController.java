@@ -1,6 +1,7 @@
 package com.example.banksystem.Controllers.Client;
 
 import com.example.banksystem.Models.Model;
+import com.example.banksystem.Views.ClientMenuOptions;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -28,13 +29,13 @@ public class ClientMenuController implements Initializable {
     }
 
     private void onDashboard() {
-        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Dashboard");
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.DASHBOARD);
     }
 
     private void onTransaction() {
-        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Transactions");
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.TRANSACTIONS);
     }
     private void onAccounts() {
-        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set("Accounts");
+        Model.getInstance().getViewFactory().getClientSelectedMenuItem().set(ClientMenuOptions.ACCOUNTS);
     }
 }
