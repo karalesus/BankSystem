@@ -37,11 +37,11 @@ public class Client {
         return payeeAddress;
     }
 
-    public ObjectProperty<Account> cAccountProperty() {
+    public ObjectProperty<Account> checkingAccountProperty() {
         return checkingAccount;
     }
 
-    public ObjectProperty<Account> sAccountProperty() {
+    public ObjectProperty<Account> savingsAccountProperty() {
         return savingsAccount;
     }
 

@@ -16,7 +16,7 @@ public class ClientCellFactory extends ListCell<Client> {
             setText(null);
             setGraphic(null);
         } else{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Fxml/Worker/ClientCell.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Worker/ClientCell.fxml"));
             ClientCellController controller = new ClientCellController(client);
             loader.setController(controller);
             setText(null);
