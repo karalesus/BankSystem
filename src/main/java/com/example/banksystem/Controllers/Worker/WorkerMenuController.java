@@ -4,6 +4,7 @@ import com.example.banksystem.Models.Model;
 import com.example.banksystem.Views.WorkerMenuOptions;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,6 +24,7 @@ public class WorkerMenuController implements Initializable {
         create_client_btn.setOnAction(event -> onCreateClient());
         clients_btn.setOnAction(event -> onClients());
         deposit_btn.setOnAction(Event -> onDeposit());
+        logout_btn.setOnAction(Event -> onLogout());
     }
 
     private void onCreateClient() {
@@ -35,5 +37,16 @@ public class WorkerMenuController implements Initializable {
 
     private void onDeposit() {
         Model.getInstance().getViewFactory().getWorkerSelectedMenuItem().set(WorkerMenuOptions.DEPOSIT);
+    }
+
+    private void onLogout(){
+        // get stage
+        Stage stage = (Stage) clients_btn.getScene().getWindow();
+        // close the worker window
+        Model.getInstance().getViewFactory().closeStage(stage);
+        // Show Login Window
+        Model.getInstance().getViewFactory().showLoginWindow();
+        // Set Client Login Succes Flag to false!! Чтобы клиент больше не зашел
+        Model.getInstance().setWorkerLoginSuccessFlag(false);
     }
 }
