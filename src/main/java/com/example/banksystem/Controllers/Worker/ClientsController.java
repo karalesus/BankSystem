@@ -3,6 +3,7 @@ package com.example.banksystem.Controllers.Worker;
 import com.example.banksystem.Models.Model;
 import com.example.banksystem.Views.ClientCellFactory;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 
 import java.net.URL;

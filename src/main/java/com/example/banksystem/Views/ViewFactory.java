@@ -118,7 +118,7 @@ public class ViewFactory {
     public AnchorPane getDepositView() {
         if (depositView == null) {
             try {
-                depositView = new FXMLLoader(getClass().getResource("/FXML/Worker/Deposit.fxml")).load();
+                depositView = new FXMLLoader(getClass().getResource("/Fxml/Worker/CloseSavingAccount.fxml")).load();
 
             } catch (Exception e) {
                 e.printStackTrace();

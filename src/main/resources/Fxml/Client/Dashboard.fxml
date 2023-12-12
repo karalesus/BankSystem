@@ -55,7 +55,7 @@
    </HBox>
    <VBox layoutX="722.0" layoutY="147.0" prefHeight="180.0" prefWidth="210.0" styleClass="summary_view" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
       <VBox prefHeight="200.0" prefWidth="100.0" styleClass="acc_summary_container">
-         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Постуления" />
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Поступления" />
          <Label fx:id="income_lbl" styleClass="income_amount" text="+ ₽50 000,00" />
          <Line endX="160.0" />
          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Траты" />

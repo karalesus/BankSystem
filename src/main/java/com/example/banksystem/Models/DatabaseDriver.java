@@ -1,5 +1,8 @@
 package com.example.banksystem.Models;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import javax.xml.transform.Result;
 import java.sql.*;
 import java.time.LocalDate;
@@ -88,7 +91,7 @@ public class DatabaseDriver {
     public ResultSet getAllClientsData() {
         Statement statement;
         ResultSet resultSet = null;
-        try{
+        try {
             statement = this.conn.createStatement();
             resultSet = statement.executeQuery("SELECT * FROM Clients;");
         } catch (SQLException e) {
@@ -96,6 +99,54 @@ public class DatabaseDriver {
         }
         return resultSet;
     }
+
+    // TODO:
+//    public ResultSet deleteClient() {
+//
+//    }
+    public void deleteClient(String pAddress) {
+        Statement statement;
+        try {
+            statement = this.conn.createStatement();
+            statement.executeUpdate("DELETE FROM Clients WHERE PayeeAddress= '"+pAddress+"';");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ResultSet searchClient(String pAddress) {
+        Statement statement;
+        ResultSet resultSet = null;
+        try {
+            statement = this.conn.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM Clients WHERE PayeeAddress='" + pAddress + "';");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultSet;
+    }
+
+    public void depositSavings(String pAddress, double amount) {
+        Statement statement;
+        try {
+            statement = this.conn.createStatement();
+            statement.executeUpdate("UPDATE CheckingAccounts SET Balance = '" +amount+ "'WHERE Owner='"+pAddress+"';");
+            statement.executeUpdate("UPDATE SavingsAccounts SET Balance = '" +0+ "'WHERE Owner='"+pAddress+"';");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void closeSavings(String pAddress) {
+        Statement statement;
+        try {
+            statement = this.conn.createStatement();
+            statement.executeUpdate("DELETE FROM SavingsAccounts WHERE Owner= '"+pAddress+"';");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     /*
      * Admin Section
      */
@@ -121,9 +172,9 @@ public class DatabaseDriver {
     public ResultSet getCheckingAccountData(String pAddress) {
         Statement statement;
         ResultSet resultSet = null;
-        try{
+        try {
             statement = this.conn.createStatement();
-            resultSet = statement.executeQuery("SELECT * FROM CheckingAccounts WHERE Owner='"+pAddress+"';");
+            resultSet = statement.executeQuery("SELECT * FROM CheckingAccounts WHERE Owner='" + pAddress + "';");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -133,9 +184,9 @@ public class DatabaseDriver {
     public ResultSet getSavingsAccountData(String pAddress) {
         Statement statement;
         ResultSet resultSet = null;
-        try{
+        try {
             statement = this.conn.createStatement();
-            resultSet = statement.executeQuery("SELECT * FROM SavingsAccounts WHERE Owner='"+pAddress+"';");
+            resultSet = statement.executeQuery("SELECT * FROM SavingsAccounts WHERE Owner='" + pAddress + "';");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

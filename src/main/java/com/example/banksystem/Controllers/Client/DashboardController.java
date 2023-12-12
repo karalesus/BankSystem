@@ -1,10 +1,13 @@
 package com.example.banksystem.Controllers.Client;
 
+import com.example.banksystem.Models.Model;
+import javafx.beans.binding.Bindings;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable {
@@ -25,6 +28,15 @@ public class DashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        bindData();
+    }
 
+    private void bindData() {
+        user_name.textProperty().bind(Bindings.concat("Привет, ").concat(Model.getInstance().getClient().firstNameProperty()));
+        login_date.setText("Сегодня "+ LocalDate.now());
+        checking_bal.textProperty().bind(Model.getInstance().getClient().checkingAccountProperty().get().balanceProperty().asString());
+        checking_acc_num.textProperty().bind(Model.getInstance().getClient().checkingAccountProperty().get().accountNumberProperty());
+        saving_bal.textProperty().bind(Model.getInstance().getClient().savingsAccountProperty().get().balanceProperty().asString());
+        saving_acc_num.textProperty().bind(Model.getInstance().getClient().savingsAccountProperty().get().accountNumberProperty());
     }
 }

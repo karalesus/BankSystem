@@ -7,15 +7,19 @@
     <list default="true" id="7079291e-3446-439e-b9c4-431555a6f866" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BankSystem.db" beforeDir="false" afterPath="$PROJECT_DIR$/BankSystem.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Client/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Client/DashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Worker/ClientCellController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Worker/ClientCellController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Worker/ClientsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Worker/ClientsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Worker/CreateClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Worker/CreateClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Worker/DepositController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Worker/DepositController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/DatabaseDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/DatabaseDriver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Views/ClientCellFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Views/ClientCellFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Views/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Views/ViewFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Worker/ClientCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Worker/ClientCell.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Worker/Deposit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Worker/CloseSavingAccount.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Worker/WorkerMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Worker/WorkerMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Styles/ClientCell.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Styles/ClientCell.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Styles/Clients.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Styles/Clients.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Styles/Deposit.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Styles/CloseSavingAccount.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
