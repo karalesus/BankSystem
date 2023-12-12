@@ -1,6 +1,8 @@
 package com.example.banksystem.Controllers.Client;
 
 import com.example.banksystem.Models.Model;
+import com.example.banksystem.Models.Transaction;
+import com.example.banksystem.Views.TransactionCellFactory;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -19,7 +21,7 @@ public class DashboardController implements Initializable {
     public Label saving_acc_num;
     public Label income_lbl;
     public Label expense_lbl;
-    public ListView transaction_listview;
+    public ListView<Transaction> transaction_listview;
     public TextField num_saving_fld;
     public TextField num_card_fld;
     public TextField amount_fld;
@@ -29,6 +31,9 @@ public class DashboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         bindData();
+        initTransactionsList();
+        transaction_listview.setItems(Model.getInstance().getLatestTransactions());
+        transaction_listview.setCellFactory(e -> new TransactionCellFactory());
     }
 
     private void bindData() {
@@ -38,5 +43,12 @@ public class DashboardController implements Initializable {
         checking_acc_num.textProperty().bind(Model.getInstance().getClient().checkingAccountProperty().get().accountNumberProperty());
         saving_bal.textProperty().bind(Model.getInstance().getClient().savingsAccountProperty().get().balanceProperty().asString());
         saving_acc_num.textProperty().bind(Model.getInstance().getClient().savingsAccountProperty().get().accountNumberProperty());
+    }
+
+    // инициализириуем лист транзакций один раз, чтобы каждый раз не делать это по новой
+    private void initTransactionsList() {
+        if (Model.getInstance().getLatestTransactions().isEmpty()){
+            Model.getInstance().setLatestTransactions();
+        }
     }
 }

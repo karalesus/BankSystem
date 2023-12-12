@@ -19,6 +19,8 @@ public class Model {
     // Client Data Section
     private final Client client;
     private boolean clientLoginSuccessFlag;
+    private final ObservableList<Transaction> latestTransactions;
+    private final ObservableList<Transaction> allTransactions;
 
     // Worker Data Section
     private boolean workerLoginSuccessFlag;
@@ -32,6 +34,8 @@ public class Model {
         // Client Data Section
         this.clientLoginSuccessFlag = false;
         this.client = new Client("", "", "", null, null, null);
+        this.latestTransactions = FXCollections.observableArrayList();
+        this.allTransactions = FXCollections.observableArrayList();
         // Worker Data Section
         this.workerLoginSuccessFlag = false;
         this.clients = FXCollections.observableArrayList();
@@ -94,6 +98,41 @@ public class Model {
         }
     }
 
+    private void prepareTransactions(ObservableList<Transaction> transactions, int limit) {
+        ResultSet resultSet = databaseDriver.getTransactions(this.client.pAddressProperty().get(), limit);
+        try {
+            while (resultSet.next()) {
+                String sender = resultSet.getString("Sender");
+                String receiver = resultSet.getString("Receiver");
+                double amount = resultSet.getDouble("Amount");
+                String[] dateParts = resultSet.getString("Date").split("-");
+                LocalDate date = LocalDate.of(Integer.parseInt(dateParts[0]), Integer.parseInt(dateParts[1]), Integer.parseInt(dateParts[2]));
+                String message = resultSet.getString("Message");
+                transactions.add(new Transaction(sender, receiver, amount, date, message));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setLatestTransactions() {
+        prepareTransactions(this.latestTransactions, 4);
+    }
+
+    public ObservableList<Transaction> getLatestTransactions() {
+        return latestTransactions;
+    }
+
+
+    public void setAllTransactions(){
+        prepareTransactions(this.allTransactions, -1);
+    }
+
+    public ObservableList<Transaction> getAllTransactions() {
+        return allTransactions;
+    }
+
     /*
      * Worker Method Section
      */
@@ -120,12 +159,13 @@ public class Model {
     public ObservableList<Client> getClients() {
         return clients;
     }
+
     public void setClients() {
         CheckingAccount checkingAccount;
         SavingsAccount savingsAccount;
         ResultSet resultSet = databaseDriver.getAllClientsData();
         try {
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 String fName = resultSet.getString("FirstName");
                 String lName = resultSet.getString("LastName");
                 String pAddress = resultSet.getString("PayeeAddress");
@@ -157,13 +197,13 @@ public class Model {
         return searchResults;
     }
     /*
-    * Utility Method Section
+     * Utility Method Section
      */
 
     public CheckingAccount getCheckingAccount(String pAddress) {
         CheckingAccount account = null;
         ResultSet resultSet = databaseDriver.getCheckingAccountData(pAddress);
-        try{
+        try {
             String num = resultSet.getString("AccountNumber");
             int tLimit = (int) resultSet.getDouble("TransactionLimit");
             double balance = resultSet.getDouble("Balance");
@@ -177,7 +217,7 @@ public class Model {
     public SavingsAccount getSavingsAccount(String pAddress) {
         SavingsAccount account = null;
         ResultSet resultSet = databaseDriver.getSavingsAccountData(pAddress);
-        try{
+        try {
             String num = resultSet.getString("AccountNumber");
             double wLimit = resultSet.getDouble("WithdrawalLimit");
             double balance = resultSet.getDouble("Balance");
