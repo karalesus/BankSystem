@@ -31,11 +31,6 @@
             </graphic>
          </Button>
          <Line endX="120.0" />
-         <Button fx:id="profile_btn" mnemonicParsing="false" styleClass="alt_menu_btn" text="Профиль">
-            <graphic>
-               <FontAwesomeIconView glyphName="USER" size="20" />
-            </graphic>
-         </Button>
          <Button fx:id="logout_btn" mnemonicParsing="false" styleClass="alt_menu_btn" text="Выйти">
             <graphic>
                <FontAwesomeIconView glyphName="EXTERNAL_LINK" size="20" />
@@ -47,7 +42,7 @@
       <VBox.margin>
          <Insets left="14.0" right="14.0" />
       </VBox.margin>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Есть ошибки? Сообщи">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Спросить у консультанта">
          <VBox.margin>
             <Insets />
          </VBox.margin>
