@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
 import java.net.URL;
+import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
@@ -22,8 +23,7 @@ public class DashboardController implements Initializable {
     public Label income_lbl;
     public Label expense_lbl;
     public ListView<Transaction> transaction_listview;
-    public TextField num_saving_fld;
-    public TextField num_card_fld;
+    public TextField payee_fld;
     public TextField amount_fld;
     public TextArea message_fld;
     public Button send_money_btn;
@@ -34,6 +34,7 @@ public class DashboardController implements Initializable {
         initTransactionsList();
         transaction_listview.setItems(Model.getInstance().getLatestTransactions());
         transaction_listview.setCellFactory(e -> new TransactionCellFactory());
+        send_money_btn.setOnAction(event -> onSendMoney());
     }
 
     private void bindData() {
@@ -50,5 +51,29 @@ public class DashboardController implements Initializable {
         if (Model.getInstance().getLatestTransactions().isEmpty()){
             Model.getInstance().setLatestTransactions();
         }
+    }
+
+    private void onSendMoney() {
+        String receiver = payee_fld.getText();
+        double amount = Double.parseDouble(amount_fld.getText());
+        String message = message_fld.getText();
+        String sender = Model.getInstance().getClient().pAddressProperty().get();
+        ResultSet resultSet = Model.getInstance().getDatabaseDriver().searchClient(receiver);
+        try {
+            if (resultSet.isBeforeFirst()){
+                Model.getInstance().getDatabaseDriver().updateBalance(receiver,amount,"ADD");
+
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        // уменьшение баланса вклада отправителя
+        Model.getInstance().getDatabaseDriver().updateBalance(sender, amount, "REMOVE");
+        // обновляем счет вклада в клиентом дашборде сразу
+        Model.getInstance().getClient().checkingAccountProperty().get().setBalance(Model.getInstance().getDatabaseDriver().getCheckingAccountBalance(sender));
+        Model.getInstance().getDatabaseDriver().newTransaction(sender, receiver, amount, message);
+        payee_fld.setText("");
+        amount_fld.setText("");
+        message_fld.setText("");
     }
 }

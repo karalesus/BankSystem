@@ -33,4 +33,8 @@ public class Account {
 
 
     }
+
+    public void setBalance(double balance) {
+        this.balance.set(balance);
+    }
 }
