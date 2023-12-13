@@ -23,8 +23,8 @@ public class WorkerMenuController implements Initializable {
     private void addListeners() {
         create_client_btn.setOnAction(event -> onCreateClient());
         clients_btn.setOnAction(event -> onClients());
-        deposit_btn.setOnAction(Event -> onDeposit());
-        logout_btn.setOnAction(Event -> onLogout());
+        deposit_btn.setOnAction(event -> onDeposit());
+        logout_btn.setOnAction(event -> onLogout());
     }
 
     private void onCreateClient() {

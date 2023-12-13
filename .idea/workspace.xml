@@ -7,9 +7,17 @@
     <list default="true" id="7079291e-3446-439e-b9c4-431555a6f866" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BankSystem.db" beforeDir="false" afterPath="$PROJECT_DIR$/BankSystem.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Client/DashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Client/DashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Client/ClientMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Client/ClientMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Client/Dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Client/Dashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Admin/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Admin/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Client/TransactionCellController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Client/TransactionCellController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Worker/WorkerMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Worker/WorkerMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/DatabaseDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/DatabaseDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Views/AccountType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Views/AccountType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Views/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Views/ViewFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Admin/Admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Admin/Admin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Client/TransactionCell.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Client/TransactionCell.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Styles/TransactionCell.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Styles/TransactionCell.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,12 +94,6 @@
           <properties class="java.lang.IllegalArgumentException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/Transaction.java</url>
-          <line>11</line>
-          <properties field="date" class="com.example.banksystem.Models.Transaction" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

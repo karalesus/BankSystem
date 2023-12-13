@@ -26,7 +26,8 @@ public class Model {
     private boolean workerLoginSuccessFlag;
     private final ObservableList<Client> clients;
     // Admin Data Section
-
+    private boolean adminLoginSuccessFlag;
+    private final ObservableList<User> users;
     private Model() {
         this.databaseDriver = new DatabaseDriver();
         this.viewFactory = new ViewFactory();
@@ -40,6 +41,8 @@ public class Model {
         this.workerLoginSuccessFlag = false;
         this.clients = FXCollections.observableArrayList();
         // Admin Data Section
+        this.adminLoginSuccessFlag = false;
+        this.users = FXCollections.observableArrayList();
 
     }
 
@@ -227,4 +230,48 @@ public class Model {
         }
         return account;
     }
+
+
+    /*
+     * Admin Method Section
+     */
+    public boolean getAdminLoginSuccessFlag() {
+        return adminLoginSuccessFlag;
+    }
+
+    public void setAdminLoginSuccessFlag(boolean adminLoginSuccessFlag) {
+        this.adminLoginSuccessFlag = adminLoginSuccessFlag;
+    }
+
+    public void evaluateAdminCred(String username, String password) {
+        ResultSet resultSet = getDatabaseDriver().getAdminData(username, password);
+        try {
+            if (resultSet.isBeforeFirst()) {
+                this.adminLoginSuccessFlag = true;
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ObservableList<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers() {
+        ResultSet resultSet = databaseDriver.getAllUsersData();
+        try {
+            while (resultSet.next()) {
+                String fName = resultSet.getString("FirstName");
+                String lName = resultSet.getString("LastName");
+                String username = resultSet.getString("Username");
+                String role = resultSet.getString("Role");
+                users.add(new User(fName, lName, username, role));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

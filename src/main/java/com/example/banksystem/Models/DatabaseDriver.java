@@ -257,4 +257,42 @@ public class DatabaseDriver {
         }
         return resultSet;
     }
+
+    /*
+    Admin methods section
+     */
+    public ResultSet getAdminData(String username, String password) {
+        Statement statement;
+        ResultSet resultSet = null;
+        try {
+            statement = this.conn.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM Admins WHERE Username='" + username + "' AND Password='" + password + "';");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return resultSet;
+    }
+
+    public void createUser(String fName, String lName, String pAddress, String password, String role) {
+        Statement statement;
+        try {
+            statement = this.conn.createStatement();
+            statement.executeUpdate("INSERT INTO " +
+                    "Users (FirstName, LastName, PayeeAddress, Password, Role)" +
+                    "VALUES ('" + fName + "','" + lName + "','" + pAddress + "','" + password + "','" + role + "');");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public ResultSet getAllUsersData() {
+        Statement statement;
+        ResultSet resultSet = null;
+        try {
+            statement = this.conn.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM Users;");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return resultSet;
+    }
 }
