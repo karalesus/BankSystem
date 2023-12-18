@@ -19,12 +19,11 @@
         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Пароль:" />
         <TextField fx:id="password_fld" />
         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Логин:" />
-        <CheckBox fx:id="pAddress_box" mnemonicParsing="false" />
-      <Label fx:id="user_address_lbl" styleClass="user_address_lbl" />
-        <Label fx:id="pAddress_lbl" styleClass="payee_address_lbl" />
+        <CheckBox fx:id="username_box" mnemonicParsing="false" />
+      <Label fx:id="username_lbl" styleClass="user_address_lbl" />
         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Роль:" />
         <ChoiceBox fx:id="role_selector" prefWidth="150.0" styleClass="role_selector" />
-        <Button fx:id="create_client_btn" mnemonicParsing="false" text="Создать аккаунт" />
+        <Button fx:id="create_user_btn" mnemonicParsing="false" text="Создать аккаунт" />
         <Label fx:id="error_lbl" layoutX="10.0" layoutY="169.0" styleClass="error_lbl" />
     </VBox>
 </AnchorPane>

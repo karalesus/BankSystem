@@ -1,13 +1,11 @@
 package com.example.banksystem.Models;
 
-import com.example.banksystem.Views.AccountType;
 import com.example.banksystem.Views.ViewFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.time.LocalDate;
 
 public class Model {
@@ -28,6 +26,8 @@ public class Model {
     // Admin Data Section
     private boolean adminLoginSuccessFlag;
     private final ObservableList<User> users;
+    //Consultant Data Section
+    private boolean consultantLoginSuccessFlag;
     private Model() {
         this.databaseDriver = new DatabaseDriver();
         this.viewFactory = new ViewFactory();
@@ -43,6 +43,8 @@ public class Model {
         // Admin Data Section
         this.adminLoginSuccessFlag = false;
         this.users = FXCollections.observableArrayList();
+        // Consultant Data Section
+        this.consultantLoginSuccessFlag  = false;
 
     }
 
@@ -60,7 +62,28 @@ public class Model {
     public ViewFactory getViewFactory() {
         return viewFactory;
     }
+    /*
+     * Consultant Method Section
+     */
+    public void evaluateConsultantCred(String username, String password) {
+        ResultSet resultSet = getDatabaseDriver().getConsultantData(username, password);
+        try {
+            if (resultSet.isBeforeFirst()) {
+                this.consultantLoginSuccessFlag = true;
 
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean getConsultantLoginSuccessFlag() {
+        return this.consultantLoginSuccessFlag;
+    }
+
+    public void setConsultantLoginSuccessFlag(boolean flag) {
+        this.consultantLoginSuccessFlag = flag;
+    }
     /*
      * Client Method Section
      */
@@ -266,8 +289,9 @@ public class Model {
                 String fName = resultSet.getString("FirstName");
                 String lName = resultSet.getString("LastName");
                 String username = resultSet.getString("Username");
+                String password = resultSet.getString("Password");
                 String role = resultSet.getString("Role");
-                users.add(new User(fName, lName, username, role));
+                users.add(new User(fName, lName, username, password, role));
             }
         } catch (SQLException e) {
             e.printStackTrace();

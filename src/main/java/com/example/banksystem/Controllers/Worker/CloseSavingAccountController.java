@@ -13,7 +13,7 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class DepositController implements Initializable {
+public class CloseSavingAccountController implements Initializable {
 
     public TextField pAddress_fld;
     public Button search_btn;

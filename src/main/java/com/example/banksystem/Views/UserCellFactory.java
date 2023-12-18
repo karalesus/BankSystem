@@ -1,8 +1,6 @@
 package com.example.banksystem.Views;
 
 import com.example.banksystem.Controllers.Admin.UserCellController;
-import com.example.banksystem.Controllers.Worker.ClientCellController;
-import com.example.banksystem.Models.Client;
 import com.example.banksystem.Models.User;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListCell;

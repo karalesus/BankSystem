@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="750.0" prefWidth="850.0" stylesheets="@../../Styles/CloseSavingAccount.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.banksystem.Controllers.Worker.DepositController">
+<AnchorPane prefHeight="750.0" prefWidth="850.0" stylesheets="@../../Styles/CloseSavingAccount.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.banksystem.Controllers.Worker.CloseSavingAccountController">
    <VBox layoutX="19.0" layoutY="116.0" prefHeight="570.0" prefWidth="820.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="100.0">
       <HBox alignment="CENTER" prefHeight="60.0" prefWidth="820.0" styleClass="search_box">
          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Поиск по логину пользователя" />

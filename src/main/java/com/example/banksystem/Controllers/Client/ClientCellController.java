@@ -1,4 +1,4 @@
-package com.example.banksystem.Controllers.Worker;
+package com.example.banksystem.Controllers.Client;
 
 import com.example.banksystem.Models.Client;
 import com.example.banksystem.Models.Model;
@@ -36,7 +36,6 @@ public class ClientCellController implements Initializable {
         sv_acc_lbl.textProperty().bind(client.savingsAccountProperty().asString());
         date_lbl.textProperty().bind(client.dateProperty().asString());
         delete_btn.setOnAction(event -> onDelete());
-//        delete_btn.setOnAction(event -> onDelete());
     }
 
     public void onDelete() {

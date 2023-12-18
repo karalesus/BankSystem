@@ -14,7 +14,6 @@ public class ClientMenuController implements Initializable {
     public Button dashboard_btn;
     public Button transactions_btn;
     public Button accounts_btn;
-    public Button profile_btn;
     public Button logout_btn;
     public Button report_btn;
 
@@ -48,7 +47,7 @@ public class ClientMenuController implements Initializable {
         Model.getInstance().getViewFactory().closeStage(stage);
         // Show Login Window
         Model.getInstance().getViewFactory().showLoginWindow();
-        // Set Client Login Succes Flag to false!! Чтобы клиент больше не зашел
+        // Set Client Login Succes Flag to false!! Чтобы больше не зашел
         Model.getInstance().setClientLoginSuccessFlag(false);
     }
 }

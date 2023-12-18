@@ -46,7 +46,7 @@ public class WorkerMenuController implements Initializable {
         Model.getInstance().getViewFactory().closeStage(stage);
         // Show Login Window
         Model.getInstance().getViewFactory().showLoginWindow();
-        // Set Client Login Succes Flag to false!! Чтобы клиент больше не зашел
+        // Set Login Succes Flag to false!! Чтобы больше не зашел
         Model.getInstance().setWorkerLoginSuccessFlag(false);
     }
 }

@@ -39,7 +39,7 @@ public class CreateClientController implements Initializable {
                 payeeAddress = createPayeeAddress();
                 onCreatePayeeAddress();
             }
-    });
+        });
         ch_acc_box.selectedProperty().addListener((observableValue, oldVal, newVal) -> {
             if (newVal) {
                 createCheckingAccountFlag = true;
@@ -57,7 +57,12 @@ public class CreateClientController implements Initializable {
         //create checking account
         if (createCheckingAccountFlag) {
             createAccount("Checking");
+        } else {
+            error_lbl.setStyle("-fx-text-fill: red ; -fx-font-size: 1.3em; -fx-font-weight: bold");
+            error_lbl.setText("Необходимо добавить карту новому клиенту");
+            emptyFields();
         }
+
         if (createSavingsAccountFlag) {
             createAccount("Savings");
         }
@@ -72,28 +77,37 @@ public class CreateClientController implements Initializable {
     }
 
     private void onCreatePayeeAddress() {
-        if (fName_fld.getText() != null & lName_fld.getText() != null){
+        if (fName_fld.getText() != null & lName_fld.getText() != null) {
             pAddress_lbl.setText(payeeAddress);
         }
     }
+
     private String createPayeeAddress() {
         int id = Model.getInstance().getDatabaseDriver().getLastClientsID() + 1;
         char fChar = Character.toLowerCase(fName_fld.getText().charAt(0));
-        return "@"+fChar+lName_fld.getText()+id;
+        return "@" + fChar + lName_fld.getText() + id;
 
     }
 
-    private void createAccount(String accountType){
-        double balance = Double.parseDouble(ch_amount_fld.getText());
+    private void createAccount(String accountType) {
+        if (ch_amount_fld.getText() == null || ch_amount_fld.getText().isEmpty()) {
+            error_lbl.setStyle("-fx-text-fill: red ; -fx-font-size: 1.3em; -fx-font-weight: bold");
+            error_lbl.setText("Необходимо добавить карту новому клиенту");
+        }
+        if (sv_amount_fld.getText() == null || sv_amount_fld.getText().isEmpty()) {
+            sv_amount_fld.setText("0");
+        }
+        double chBalance = Double.parseDouble(ch_amount_fld.getText());
+        double svBalance = Double.parseDouble(sv_amount_fld.getText());
         // Generate Account Number
         String firstSection = "3201";
-        String lastSection = Integer.toString((new Random().nextInt(9999)+1000));
+        String lastSection = Integer.toString((new Random().nextInt(9999) + 1000));
         String accountNumber = firstSection + " " + lastSection;
         //Create the checking or savings account
-        if (accountType.equals("Checking")){
-            Model.getInstance().getDatabaseDriver().createCheckingAccount(payeeAddress, accountNumber, 10, balance);
-        }else{
-            Model.getInstance().getDatabaseDriver().createSavingsAccount(payeeAddress, accountNumber, 10000, balance);
+        if (accountType.equals("Checking")) {
+            Model.getInstance().getDatabaseDriver().createCheckingAccount(payeeAddress, accountNumber, 10, chBalance);
+        } else {
+            Model.getInstance().getDatabaseDriver().createSavingsAccount(payeeAddress, accountNumber, 10000, svBalance);
         }
     }
 

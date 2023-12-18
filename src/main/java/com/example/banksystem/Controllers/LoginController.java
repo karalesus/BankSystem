@@ -65,6 +65,17 @@ public class LoginController implements Initializable {
                 password_fld.setText("");
                 error_lbl.setText("Такого пользователя не существует");
             }
+        } else if (Model.getInstance().getViewFactory().getLoginAccountType() == AccountType.CONSULTANT) {
+            // Инициализируем Consultant Login Credentials
+            Model.getInstance().evaluateConsultantCred(login_fld.getText(), password_fld.getText());
+            if (Model.getInstance().getConsultantLoginSuccessFlag()) {
+                Model.getInstance().getViewFactory().showConsultantWindow();
+                Model.getInstance().getViewFactory().closeStage(stage);
+            } else {
+                login_fld.setText("");
+                password_fld.setText("");
+                error_lbl.setText("Такого пользователя не существует");
+            }
         }
     }
 
