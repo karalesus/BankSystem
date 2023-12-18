@@ -11,6 +11,7 @@ module com.example.banksystem {
     exports com.example.banksystem.Controllers.Worker;
     exports com.example.banksystem.Controllers.Client;
     exports com.example.banksystem.Controllers.Admin;
+    exports com.example.banksystem.Controllers.Consultant;
     exports com.example.banksystem.Models;
     exports com.example.banksystem.Views;
 }

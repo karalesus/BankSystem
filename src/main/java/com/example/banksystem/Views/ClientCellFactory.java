@@ -1,6 +1,6 @@
 package com.example.banksystem.Views;
 
-import com.example.banksystem.Controllers.Worker.ClientCellController;
+import com.example.banksystem.Controllers.Client.ClientCellController;
 import com.example.banksystem.Models.Client;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListCell;
@@ -16,7 +16,7 @@ public class ClientCellFactory extends ListCell<Client> {
             setText(null);
             setGraphic(null);
         } else{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Fxml/Worker/ClientCell.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Worker/ClientCell.fxml"));
             ClientCellController controller = new ClientCellController(client);
             loader.setController(controller);
             setText(null);

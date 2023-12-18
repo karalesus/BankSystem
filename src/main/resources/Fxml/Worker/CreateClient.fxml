@@ -34,6 +34,6 @@
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Баланс вклада:"/>
       <TextField fx:id="sv_amount_fld"/>
       <Button fx:id="create_client_btn" mnemonicParsing="false" text="Создать аккаунт клиента"/>
-      <Label fx:id="error_lbl" layoutX="10.0" layoutY="169.0" styleClass="error_lbl" text="ошибка:"/>
+      <Label fx:id="error_lbl" layoutX="10.0" layoutY="169.0" styleClass="error_lbl" />
    </VBox>
 </AnchorPane>

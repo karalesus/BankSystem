@@ -18,7 +18,7 @@
 .client_cell_container HBox Label{
     -fx-text-fill: #444444;
     -fx-font-family: "Calibri Light";
-    -fx-font-size: 1.3em;
+    -fx-font-size: 1.0em;
  }
 
 .acc_display_lbl {

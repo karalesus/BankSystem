@@ -16,11 +16,9 @@ public class Account {
         return owner;
     }
 
-
     public StringProperty accountNumberProperty() {
         return accountNumber;
     }
-
 
     public DoubleProperty balanceProperty() {
         return balance;
@@ -30,7 +28,13 @@ public class Account {
         this.owner = new SimpleStringProperty(this, "Owner", owner);
         this.accountNumber = new SimpleStringProperty(this, "Account Number", accountNumber);
         this.balance = new SimpleDoubleProperty(this, "Balance", balance);
+    }
 
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber.set(accountNumber);
+    }
 
+    public void setBalance(double balance) {
+        this.balance.set(balance);
     }
 }

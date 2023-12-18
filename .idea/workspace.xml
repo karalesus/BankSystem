@@ -6,11 +6,31 @@
   <component name="ChangeListManager">
     <list default="true" id="7079291e-3446-439e-b9c4-431555a6f866" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankSystem.db" beforeDir="false" afterPath="$PROJECT_DIR$/BankSystem.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Admin/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Admin/CreateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Admin/UserCellController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Admin/UserCellController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Client/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Client/AccountsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Client/ClientMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Client/ClientMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Consultant/ConsultantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Consultant/ConsultantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Consultant/ConsultantMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Consultant/ConsultantMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Worker/ClientCellController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Client/ClientCellController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Worker/CreateClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Worker/CreateClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Worker/DepositController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Worker/CloseSavingAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Worker/WorkerMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Controllers/Worker/WorkerMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/DatabaseDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/DatabaseDriver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Views/ClientCellFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Views/ClientCellFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Views/UserCellFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Views/UserCellFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Views/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/banksystem/Views/ViewFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Worker/Deposit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Worker/Deposit.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Admin/CreateUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Admin/CreateUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Client/Accounts.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Client/Accounts.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Client/ClientMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Client/ClientMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Worker/CloseSavingAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Worker/CloseSavingAccount.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Worker/Deposit.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +40,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
+        <option value="UML Class" />
         <option value="FxmlFile" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -45,14 +66,17 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;ToolWindowRun.ShowToolbar&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/karalesus/IdeaProjects/BankSystem/src/main/java/com/example/banksystem/Controllers&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/karalesus/IdeaProjects/BankSystem&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.externalResources&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -80,6 +104,17 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -87,13 +122,11 @@
           <properties class="java.lang.IllegalArgumentException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/banksystem/Models/Transaction.java</url>
-          <line>11</line>
-          <properties field="date" class="com.example.banksystem.Models.Transaction" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
